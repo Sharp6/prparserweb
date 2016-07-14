@@ -17,7 +17,7 @@ var app = express();
 //app.set('view engine', 'hjs');
 var exphbs = require('express-handlebars');
 app.engine('.hbs', exphbs({
-  defaultLayout: 'single', 
+  defaultLayout: 'single',
   extname: '.hbs',
   layoutsDir: path.join(__dirname, 'views/layouts'),
   partialsDir: path.join(__dirname, 'views/partials')
@@ -33,9 +33,9 @@ app.use(fileUpload());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+//app.use('/', routes);
 app.use('/users', users);
-app.use('/prmv', prRoutes);
+app.use('/', prRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

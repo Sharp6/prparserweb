@@ -1,0 +1,253 @@
+<component name="testComp">
+  <version>1.0</version>
+  <fullName>testApp:testComp</fullName>
+  <businessOwner name="NSI"/>
+  <modelOwner name="NSI"/>
+  <firstAnalyst name="Philip"/>
+  <modelRepository name="Descriptors 3.0"/>
+  <customRepository name="Descriptors 3.0"/>
+  <componentDependencies>
+    <componentDependency name="testComp:account">
+      <dependsOn name="account"/>
+      <isManyToMany value="false"/>
+    </componentDependency>
+    <componentDependency name="testComp:utils">
+      <dependsOn name="utils"/>
+      <isManyToMany value="false"/>
+    </componentDependency>
+    <componentDependency name="testComp:validation">
+      <dependsOn name="validation"/>
+      <isManyToMany value="false"/>
+    </componentDependency>
+    <componentDependency name="testComp:workflow">
+      <dependsOn name="workflow"/>
+      <isManyToMany value="false"/>
+    </componentDependency>
+  </componentDependencies>
+  <componentOptions>
+    <componentOption name="testComp:hasDataBaseSchema">
+      <value>TESTCOMP</value>
+      <componentOptionType name="hasDataBaseSchema"/>
+    </componentOption>
+  </componentOptions>
+  <dataElements>
+    <dataElement name="garage space">
+      <packageName>be.uantwerpen.nsi</packageName>
+      <description/>
+      <disabled>no</disabled>
+      <fields>
+        <field name="nam e">
+          <type>String</type>
+          <fieldType>VALUE_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <valueField name="ValueField:Garage_name">
+            <valueFieldType name="Falafel"/>
+          </valueField>
+          <fieldOptions/>
+        </field>
+        <field name="status">
+          <type>String</type>
+          <fieldType>VALUE_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <valueField name="ValueField:Garage_status">
+            <valueFieldType name="String"/>
+          </valueField>
+          <fieldOptions>
+            <fieldOption name="status:isExposedField">
+              <value/>
+              <fieldOptionType name="isExposedField"/>
+            </fieldOption>
+            <fieldOption name="status:isStatusField">
+              <value/>
+              <fieldOptionType name="isStatusField"/>
+            </fieldOption>
+          </fieldOptions>
+        </field>
+      </fields>
+      <finders>
+        <finder name="findAllGarages">
+          <fieldOperatorPairs/>
+          <finderOptions/>
+        </finder>
+        <finder name="findByNameEq">
+          <fieldOperatorPairs>
+            <fieldOperatorPair name="Eq:name">
+              <operator>Eq</operator>
+              <field undefined="true"/>
+            </fieldOperatorPair>
+          </fieldOperatorPairs>
+          <finderOptions/>
+        </finder>
+        <finder name="findByStatusEq">
+          <fieldOperatorPairs>
+            <fieldOperatorPair name="Eq:status">
+              <operator>Eq</operator>
+              <field name="status"/>
+            </fieldOperatorPair>
+          </fieldOperatorPairs>
+          <finderOptions/>
+        </finder>
+      </finders>
+      <dataCommands/>
+      <dataProjections/>
+      <dataOptions/>
+      <dataChildren/>
+    </dataElement>
+    <dataElement name="GarageTaskStatus">
+      <packageName>be.uantwerpen.nsi</packageName>
+      <description/>
+      <disabled>no</disabled>
+      <fields>
+        <field name="name">
+          <type>String</type>
+          <fieldType>VALUE_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <valueField name="ValueField:GarageTaskStatus_name">
+            <valueFieldType name="String"/>
+          </valueField>
+          <fieldOptions>
+            <fieldOption name="name:isNameField">
+              <value/>
+              <fieldOptionType name="isNameField"/>
+            </fieldOption>
+          </fieldOptions>
+        </field>
+        <field name="startedAt">
+          <type>Date</type>
+          <fieldType>VALUE_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <valueField name="ValueField:GarageTaskStatus_startedAt">
+            <valueFieldType name="Date"/>
+          </valueField>
+          <fieldOptions/>
+        </field>
+        <field name="finishedAt">
+          <type>Date</type>
+          <fieldType>VALUE_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <valueField name="ValueField:GarageTaskStatus_finishedAt">
+            <valueFieldType name="Date"/>
+          </valueField>
+          <fieldOptions/>
+        </field>
+        <field name="status">
+          <type>String</type>
+          <fieldType>VALUE_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <valueField name="ValueField:GarageTaskStatus_status">
+            <valueFieldType name="String"/>
+          </valueField>
+          <fieldOptions>
+            <fieldOption name="status:isStatusField">
+              <value/>
+              <fieldOptionType name="isStatusField"/>
+            </fieldOption>
+          </fieldOptions>
+        </field>
+        <field name="stateTask">
+          <type>DataRef</type>
+          <fieldType>LINK_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <linkField name="LinkField:GarageTaskStatus_stateTask">
+            <linkFieldType name="Ln01"/>
+            <targetPackage>workflow#net.democritus.workflow</targetPackage>
+            <targetClass>StateTask</targetClass>
+          </linkField>
+          <fieldOptions/>
+        </field>
+        <field name="garage">
+          <type>DataRef</type>
+          <fieldType>LINK_FIELD</fieldType>
+          <description/>
+          <isInfoField value="true"/>
+          <isListField value="false"/>
+          <linkField name="LinkField:GarageTaskStatus_garage">
+            <linkFieldType name="Ln01"/>
+            <targetPackage>be.uantwerpen.nsi</targetPackage>
+            <targetClass>Garage</targetClass>
+          </linkField>
+          <fieldOptions/>
+        </field>
+      </fields>
+      <finders>
+        <finder name="findAllGarageTaskStatuss">
+          <fieldOperatorPairs/>
+          <finderOptions/>
+        </finder>
+        <finder name="findByNameEq">
+          <fieldOperatorPairs>
+            <fieldOperatorPair name="Eq:name">
+              <operator>Eq</operator>
+              <field undefined="true"/>
+            </fieldOperatorPair>
+          </fieldOperatorPairs>
+          <finderOptions/>
+        </finder>
+        <finder name="findByStatusEq">
+          <fieldOperatorPairs>
+            <fieldOperatorPair name="Eq:status">
+              <operator>Eq</operator>
+              <field name="status"/>
+            </fieldOperatorPair>
+          </fieldOperatorPairs>
+          <finderOptions/>
+        </finder>
+      </finders>
+      <dataCommands/>
+      <dataProjections/>
+      <dataOptions/>
+      <dataChildren/>
+    </dataElement>
+  </dataElements>
+  <flowElements>
+    <flowElement name="Garage">
+      <packageName>be.uantwerpen.nsi</packageName>
+      <targetClass>be.uantwerpen.nsi.Garage</targetClass>
+      <statusField>Status</statusField>
+      <archiveName/>
+      <workflowName>GarageFlow</workflowName>
+      <description/>
+      <disabled>no</disabled>
+      <flowOptions/>
+    </flowElement>
+  </flowElements>
+  <taskElements>
+    <taskElement name="GarageTesterTask">
+      <packageName>be.uantwerpen.nsi</packageName>
+      <targetClass>be.uantwerpen.nsi.GarageDetails</targetClass>
+      <paramClass>be.uantwerpen.nsi.GarageTesterTaskParams</paramClass>
+      <description/>
+      <disabled>no</disabled>
+      <taskOptions>
+        <taskOption name="GarageTesterTask:includeDelegation">
+          <value/>
+          <taskOptionType name="includeDelegation"/>
+        </taskOption>
+        <taskOption name="GarageTesterTask:includePerform">
+          <value/>
+          <taskOptionType name="includePerform"/>
+        </taskOption>
+        <taskOption name="GarageTesterTask:includeRemoteAccess">
+          <value/>
+          <taskOptionType name="includeRemoteAccess"/>
+        </taskOption>
+      </taskOptions>
+    </taskElement>
+  </taskElements>
+  <serviceElements/>
+  <valueFieldTypes/>
+</component>

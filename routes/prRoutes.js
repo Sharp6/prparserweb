@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var validator = require('../../prParser');
+var validator = require('../prParser');
 
 router.get('/', function(req, res, next) {
   res.render('upload', { title: 'PRMV' });
