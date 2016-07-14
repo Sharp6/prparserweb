@@ -1,0 +1,16 @@
+<h1>Validation report</h1>
+<p>{{report.numberOfValidations}}</p>
+
+<h3>Data Element Validations</h3>
+<ul>
+	{{#report.dataElementWarnings}}
+	<li>{{this}}</li>
+	{{/report.dataElementWarnings}}
+</ul>
+
+<h3>Field Validations</h3>
+<ul>
+	{{#report.fieldWarnings}}
+	<li>{{this}}</li>
+	{{/report.fieldWarnings}}
+</ul>
